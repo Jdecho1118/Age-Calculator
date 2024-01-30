@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #151719;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.waviy {
+    position: relative;
+    -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, .2));
+    font-size: 60px;
+    display: flex;
+    align-items: center; 
+}
+
+.waviy span {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    animation: waviy 4s infinite;
+    animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes waviy {
+    0%, 40%, 100% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-20px);
+    }
+}
+
+.bg {
+    animation:slide 10s ease-in-out infinite alternate;
+    background-image: linear-gradient(60deg, #CADCFC 50%, #8AB6F9 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+}  
+.bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:8s;
+}  
+.bg3 {
+    animation-duration:8s;
+}
+
+@keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+.container {
+    width: 100%;
+    min-height: 100vh;
+    color: #fff;
+    padding: 10px;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 600px;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.calculator h1 {
+    font-size: 60px;
+}
+
+.input-box {
+    margin: 40px 0;
+    padding: 35px;
+    border-radius: 5px;
+    background: rgb(138,182,249, 0.3);
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.input-box input {
+    flex: 1;
+    margin-right: 20px;
+    padding: 14px 20px;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.input-box button {
+    background: #00246B;
+    border: 0;
+    outline: 0;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+}
+
+.input-box input::-webkit-calendar-picker-indicator {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    position: absolute;
+    background-position: calc(100% - 10px);
+    background-size: 30px;
+    cursor: pointer;
+    height: auto;
+}
+
+#result {
+    font-size: 20px;
+}
+
+#result span {
+    color: #fdec03;
+    font-size: 30px;
+}
